@@ -1,0 +1,12 @@
+@import "./base.css";
+
+.container {
+  width: 100vw;
+  padding: 0 calc((100vw - var(--container)) / 2);
+}
+
+.button {
+}
+.p-drawer {
+  width: 30vw !important;
+}

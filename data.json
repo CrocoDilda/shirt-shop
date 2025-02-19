@@ -1,0 +1,620 @@
+[
+  {
+    "id": 0,
+    "name": "Eternal Code",
+    "article": "MP002XW0PX9O",
+    "images": [
+      "baon-MP002XW0PX9O-1.webp",
+      "baon-MP002XW0PX9O-2.webp",
+      "baon-MP002XW0PX9O-3.webp",
+      "baon-MP002XW0PX9O-4.webp"
+    ],
+    "color": ["white"],
+    "sizes": { "XXS": 1, "XS": 0, "S": 0, "M": 1, "L": 12, "XL": 34, "XXL": 2 },
+    "material": "cotton",
+    "gender": "female",
+    "price": "6699",
+    "manufacturer": "baon",
+    "popularity": 0,
+    "model_sizes": "80-58-88",
+    "model_height": "172"
+  },
+  {
+    "id": 1,
+    "name": "Silent Structure",
+    "article": "MP002XW08RE0",
+    "images": [
+      "baon-MP002XW08RE0-1.webp",
+      "baon-MP002XW08RE0-2.webp",
+      "baon-MP002XW08RE0-3.webp",
+      "baon-MP002XW08RE0-4.webp"
+    ],
+    "color": ["white"],
+    "sizes": { "S": 1, "M": 2, "L": 4, "XL": 4, "XXL": 8, "3XL": 12 },
+    "material": "cotton",
+    "gender": "female",
+    "price": "4599",
+    "manufacturer": "baon",
+    "popularity": 0,
+    "model_sizes": "88-63-92",
+    "model_height": "177"
+  },
+  {
+    "id": 2,
+    "name": "Pure Axis",
+    "article": "MP002XW1FIH5",
+    "images": [
+      "baon-MP002XW1FIH5-1.webp",
+      "baon-MP002XW1FIH5-2.webp",
+      "baon-MP002XW1FIH5-3.webp",
+      "baon-MP002XW1FIH5-4.webp"
+    ],
+    "color": ["white"],
+    "sizes": { "S": 4, "M": 7, "L": 5, "XL": 0 },
+    "material": "viscose",
+    "gender": "female",
+    "price": "3499",
+    "manufacturer": "baon",
+    "popularity": 0,
+    "model_sizes": "87-60-90",
+    "model_height": "172"
+  },
+  {
+    "id": 3,
+    "name": "Abstract Core",
+    "article": "MP002XW0J3O1",
+    "images": [
+      "colins-MP002XW0J3O1-1.webp",
+      "colins-MP002XW0J3O1-2.webp",
+      "colins-MP002XW0J3O1-3.webp",
+      "colins-MP002XW0J3O1-4.webp"
+    ],
+    "color": ["white"],
+    "sizes": {
+      "XXS": 6,
+      "XS": 8,
+      "S": 3,
+      "M": 1,
+      "L": 1,
+      "XL": 9,
+      "XXL": 8,
+      "3XL": 3,
+      "4XL": 2
+    },
+    "material": "viscose",
+    "gender": "female",
+    "price": "2790",
+    "manufacturer": "colins",
+    "popularity": 0,
+    "model_sizes": "84-64-94 ",
+    "model_height": "177"
+  },
+  {
+    "id": 4,
+    "name": "Minimal Vector",
+    "article": "MP002XW0ZMHS",
+    "images": [
+      "colins-MP002XW0ZMHS-1.webp",
+      "colins-MP002XW0ZMHS-2.webp",
+      "colins-MP002XW0ZMHS-3.webp",
+      "colins-MP002XW0ZMHS-4.webp"
+    ],
+    "color": ["white"],
+    "sizes": { "XS": 1, "S": 9, "XL": 7 },
+    "material": "cotton",
+    "gender": "female",
+    "price": "1690",
+    "manufacturer": "colins",
+    "popularity": 0,
+    "model_sizes": "80-60-90",
+    "model_height": "177"
+  },
+  {
+    "id": 5,
+    "name": "Neutral Form",
+    "article": "MP002XM2543C",
+    "images": [
+      "baon-MP002XM2543C-1.webp",
+      "baon-MP002XM2543C-2.webp",
+      "baon-MP002XM2543C-3.webp",
+      "baon-MP002XM2543C-4.webp"
+    ],
+    "color": ["white"],
+    "sizes": { "M": 3, "L": 22, "XL": 1, "XXL": 0, "3XL": 12, "4XL": 4 },
+    "material": "flax",
+    "gender": "male",
+    "price": "8399",
+    "manufacturer": "baon",
+    "popularity": 0,
+    "model_sizes": "100-76-95",
+    "model_height": "187"
+  },
+  {
+    "id": 6,
+    "name": "Precise Void",
+    "article": "MP002XM0COH0",
+    "images": [
+      "baon-MP002XM0COH0-1.webp",
+      "baon-MP002XM0COH0-2.webp",
+      "baon-MP002XM0COH0-3.webp",
+      "baon-MP002XM0COH0-4.webp"
+    ],
+    "color": ["white"],
+    "sizes": { "M": 2, "L": 12, "XL": 3, "XXL": 1 },
+    "material": "cotton",
+    "gender": "male",
+    "price": "9499",
+    "manufacturer": "baon",
+    "popularity": 0,
+    "model_sizes": "100-84-94 ",
+    "model_height": "185"
+  },
+  {
+    "id": 7,
+    "name": "Essential Frame",
+    "article": "MP002XM08MEP",
+    "images": [
+      "eterna-MP002XM08MEP-1.webp",
+      "eterna-MP002XM08MEP-2.webp",
+      "eterna-MP002XM08MEP-3.webp",
+      "eterna-MP002XM08MEP-4.webp"
+    ],
+    "color": ["white"],
+    "sizes": { "XXL": 2, "3XL": 3, "4XL": 4 },
+    "material": "cotton",
+    "gender": "male",
+    "price": "16999",
+    "manufacturer": "eterna",
+    "popularity": 0,
+    "model_sizes": "104-82-101",
+    "model_height": "187"
+  },
+  {
+    "id": 8,
+    "name": "Linear Paradox",
+    "article": "MP002XM0866K",
+    "images": [
+      "eterna-MP002XM0866K-1.webp",
+      "eterna-MP002XM0866K-2.webp",
+      "eterna-MP002XM0866K-3.webp",
+      "eterna-MP002XM0866K-4.webp"
+    ],
+    "color": ["white"],
+    "sizes": {
+      "XXS": 2,
+      "XS": 1,
+      "S": 0,
+      "M": 3,
+      "L": 4,
+      "XL": 9
+    },
+    "material": "viscose",
+    "gender": "male",
+    "price": "14999",
+    "manufacturer": "eterna",
+    "popularity": 0,
+    "model_sizes": "92-74-92 ",
+    "model_height": "188"
+  },
+  {
+    "id": 9,
+    "name": "Infinite Edge",
+    "article": "",
+    "images": [
+      "bawer-XD001XM007JH-1.webp",
+      "bawer-XD001XM007JH-2.webp",
+      "bawer-XD001XM007JH-3.webp",
+      "bawer-XD001XM007JH-4.webp"
+    ],
+    "color": ["white"],
+    "sizes": {
+      "S": 1,
+      "M": 3,
+      "L": 1,
+      "XL": 2
+    },
+    "material": "cotton",
+    "gender": "male",
+    "price": "7500",
+    "manufacturer": "bawer",
+    "popularity": 0,
+    "model_sizes": "103-78-98",
+    "model_height": "189"
+  },
+  {
+    "id": 10,
+    "name": "Static Flow",
+    "article": "XD001XM007NJ",
+    "images": [
+      "bawer-XD001XM007NJ-1.webp",
+      "bawer-XD001XM007NJ-2.webp",
+      "bawer-XD001XM007NJ-3.webp",
+      "bawer-XD001XM007NJ-4.webp"
+    ],
+    "color": ["white"],
+    "sizes": {
+      "S": 0,
+      "M": 2,
+      "L": 1,
+      "XL": 6,
+      "3XL": 4,
+      "4XL": 1
+    },
+    "material": "cotton",
+    "gender": "male",
+    "price": "2290",
+    "manufacturer": "colins",
+    "popularity": 0,
+    "model_sizes": "101-76-94",
+    "model_height": "190"
+  },
+  {
+    "id": 11,
+    "name": "Parallel Silence",
+    "article": "MP002XM0B9HZ",
+    "images": [
+      "colins-MP002XM0B9HZ-1.webp",
+      "colins-MP002XM0B9HZ-2.webp",
+      "colins-MP002XM0B9HZ-3.webp",
+      "colins-MP002XM0B9HZ-4.webp"
+    ],
+    "color": ["white", "gray"],
+    "sizes": {
+      "XS": 0,
+      "S": 3,
+      "M": 6,
+      "L": 0,
+      "XL": 3,
+      "XXL": 12,
+      "3XL": 1,
+      "4XL": 2
+    },
+    "material": "viscose",
+    "gender": "male",
+    "price": "2990",
+    "manufacturer": "colins",
+    "popularity": 0,
+    "model_sizes": "103-78-98",
+    "model_height": "189"
+  },
+  {
+    "id": 12,
+    "name": "Abstract Order",
+    "article": "MP002XM0CMPV",
+    "images": [
+      "colins-MP002XM0CMPV-1.webp",
+      "colins-MP002XM0CMPV-2.webp",
+      "colins-MP002XM0CMPV-3.webp",
+      "colins-MP002XM0CMPV-4.webp"
+    ],
+    "color": ["white"],
+    "sizes": {
+      "XS": 1,
+      "S": 0,
+      "M": 2,
+      "L": 3,
+      "XL": 0,
+      "XXL": 0
+    },
+    "material": "cotton",
+    "gender": "male",
+    "price": "2990",
+    "manufacturer": "colins",
+    "popularity": 0,
+    "model_sizes": "89-72-91",
+    "model_height": "183"
+  },
+  {
+    "id": 13,
+    "name": "Formal Essence",
+    "article": "MP002XW0PX9E",
+    "images": [
+      "baon-MP002XW0PX9E-1.webp",
+      "baon-MP002XW0PX9E-2.webp",
+      "baon-MP002XW0PX9E-3.webp",
+      "baon-MP002XW0PX9E-4.webp"
+    ],
+    "color": ["black"],
+    "sizes": {
+      "S": 1,
+      "M": 3,
+      "L": 4,
+      "XL": 1
+    },
+    "material": "cotton",
+    "gender": "female",
+    "price": "5999",
+    "manufacturer": "baon",
+    "popularity": 0,
+    "model_sizes": "76-62-88",
+    "model_height": "173"
+  },
+  {
+    "id": 14,
+    "name": "Timeless Construct",
+    "article": "MP002XW0YFOB",
+    "images": [
+      "baon-MP002XW0YFOB-1.webp",
+      "baon-MP002XW0YFOB-2.webp",
+      "baon-MP002XW0YFOB-3.webp",
+      "baon-MP002XW0YFOB-4.webp"
+    ],
+    "color": ["black"],
+    "sizes": {
+      "XXS": 0,
+      "XS": 0,
+      "S": 3,
+      "M": 4,
+      "L": 1,
+      "XL": 2,
+      "XXL": 1,
+      "3XL": 0
+    },
+    "material": "viscose",
+    "gender": "female",
+    "price": "5599",
+    "manufacturer": "baon",
+    "popularity": 0,
+    "model_sizes": "86-60-92",
+    "model_height": "175"
+  },
+  {
+    "id": 15,
+    "name": "Elemental Shift",
+    "article": "MP002XW12CNG",
+    "images": [
+      "colins-MP002XW12CNG-1.webp",
+      "colins-MP002XW12CNG-2.webp",
+      "colins-MP002XW12CNG-3.webp",
+      "colins-MP002XW12CNG-4.webp"
+    ],
+    "color": ["black"],
+    "sizes": {
+      "XXS": 0,
+      "XS": 0,
+      "S": 2,
+      "M": 1,
+      "L": 1,
+      "XL": 0,
+      "XXL": 2,
+      "3XL": 0
+    },
+    "material": "cotton",
+    "gender": "female",
+    "price": "2390",
+    "manufacturer": "colins",
+    "popularity": 0,
+    "model_sizes": "78-65-92 ",
+    "model_height": "176"
+  },
+  {
+    "id": 16,
+    "name": "Primary Balance",
+    "article": "MP002XW00S1N",
+    "images": [
+      "colins-MP002XW00S1N-1.webp",
+      "colins-MP002XW00S1N-2.webp",
+      "colins-MP002XW00S1N-3.webp",
+      "colins-MP002XW00S1N-4.webp"
+    ],
+    "color": ["black"],
+    "sizes": {
+      "XXS": 1,
+      "XS": 2,
+      "S": 5,
+      "M": 1,
+      "L": 1,
+      "XL": 0,
+      "XXL": 0,
+      "3XL": 0
+    },
+    "material": "viscose",
+    "gender": "female",
+    "price": "1690",
+    "manufacturer": "colins",
+    "popularity": 0,
+    "model_sizes": "84-61-92 ",
+    "model_height": "177"
+  },
+  {
+    "id": 17,
+    "name": "Neutral Construct",
+    "article": "MP002XM08MF9",
+    "images": [
+      "eterna-MP002XM08MF9-1.webp",
+      "eterna-MP002XM08MF9-2.webp",
+      "eterna-MP002XM08MF9-3.webp",
+      "eterna-MP002XM08MF9-4.webp"
+    ],
+    "color": ["black"],
+    "sizes": {
+      "XXS": 1,
+      "XS": 3,
+      "S": 4,
+      "M": 0,
+      "L": 1,
+      "XL": 2,
+      "XXL": 0,
+      "3XL": 1
+    },
+    "material": "cotton",
+    "gender": "male",
+    "price": "16999",
+    "manufacturer": "eterna",
+    "popularity": 0,
+    "model_sizes": "92-74-92",
+    "model_height": "188"
+  },
+  {
+    "id": 18,
+    "name": "Core Symmetry",
+    "article": "MP002XM0CMQX",
+    "images": [
+      "colins-MP002XM0CMQX-1.webp",
+      "colins-MP002XM0CMQX-2.webp",
+      "colins-MP002XM0CMQX-3.webp",
+      "colins-MP002XM0CMQX-4.webp"
+    ],
+    "color": ["black"],
+    "sizes": {
+      "XXS": 0,
+      "XS": 3,
+      "S": 1,
+      "M": 1,
+      "L": 3,
+      "XL": 3,
+      "XXL": 0,
+      "3XL": 0
+    },
+    "material": "cotton",
+    "gender": "male",
+    "price": "4990",
+    "manufacturer": "colins",
+    "popularity": 0,
+    "model_sizes": "89-67-93",
+    "model_height": "188"
+  },
+  {
+    "id": 19,
+    "name": "Abstract Precision",
+    "article": "MP002XM00688",
+    "images": [
+      "colins-MP002XM00688-1.webp",
+      "colins-MP002XM00688-2.webp",
+      "colins-MP002XM00688-3.webp",
+      "colins-MP002XM00688-4.webp"
+    ],
+    "color": ["black"],
+    "sizes": {
+      "XXS": 1,
+      "XS": 1,
+      "S": 3,
+      "M": 1,
+      "L": 2,
+      "XL": 10,
+      "XXL": 2,
+      "3XL": 1
+    },
+    "material": "viscose",
+    "gender": "male",
+    "price": "3290",
+    "manufacturer": "colins",
+    "popularity": 0,
+    "model_sizes": "102-81-99",
+    "model_height": "190"
+  },
+  {
+    "id": 20,
+    "name": "Minimal Essence",
+    "article": "MP002XM2543L",
+    "images": [
+      "baon-MP002XM2543L-1.webp",
+      "baon-MP002XM2543L-2.webp",
+      "baon-MP002XM2543L-3.webp",
+      "baon-MP002XM2543L-4.webp"
+    ],
+    "color": ["black"],
+    "sizes": {
+      "S": 0,
+      "M": 1,
+      "L": 1,
+      "XL": 0,
+      "XXL": 2,
+      "3XL": 3
+    },
+    "material": "cotton",
+    "gender": "male",
+    "price": "8399",
+    "manufacturer": "baon",
+    "popularity": 0,
+    "model_sizes": "93-76-95",
+    "model_height": "185"
+  },
+  {
+    "id": 21,
+    "name": "Silent Geometry",
+    "article": "MP002XM00I59",
+    "images": [
+      "baon-MP002XM00I59-1.webp",
+      "baon-MP002XM00I59-2.webp",
+      "baon-MP002XM00I59-3.webp",
+      "baon-MP002XM00I59-4.webp"
+    ],
+    "color": ["black"],
+    "sizes": {
+      "XXS": 0,
+      "XS": 1,
+      "S": 0,
+      "M": 3,
+      "L": 11,
+      "XL": 3,
+      "XXL": 0,
+      "3XL": 0
+    },
+    "material": "viscose",
+    "gender": "m",
+    "price": "7199",
+    "manufacturer": "baon",
+    "popularity": 0,
+    "model_sizes": "103-78-98",
+    "model_height": "187"
+  },
+  {
+    "id": 22,
+    "name": "Essential Paradox",
+    "article": "XD001XM007LX",
+    "images": [
+      "bawer-XD001XM007LX-1.webp",
+      "bawer-XD001XM007LX-2.webp",
+      "bawer-XD001XM007LX-3.webp",
+      "bawer-XD001XM007LX-4.webp"
+    ],
+    "color": ["black"],
+    "sizes": {
+      "XXS": 1,
+      "XS": 0,
+      "S": 0,
+      "M": 2,
+      "L": 11,
+      "XL": 5,
+      "XXL": 6,
+      "3XL": 0
+    },
+    "material": "cotton",
+    "gender": "male",
+    "price": "7500",
+    "manufacturer": "bawer",
+    "popularity": 0,
+    "model_sizes": "97-80-96",
+    "model_height": "189"
+  },
+  {
+    "id": 23,
+    "name": "Formal Axis",
+    "article": "XD001XM007J6",
+    "images": [
+      "bawer-XD001XM007J6-1.webp",
+      "bawer-XD001XM007J6-2.webp",
+      "bawer-XD001XM007J6-3.webp",
+      "bawer-XD001XM007J6-4.webp"
+    ],
+    "color": ["black"],
+    "sizes": {
+      "XXS": 1,
+      "XS": 0,
+      "S": 5,
+      "M": 4,
+      "L": 9,
+      "XL": 0,
+      "XXL": 8,
+      "3XL": 0
+    },
+    "material": "viscose",
+    "gender": "male",
+    "price": "5000",
+    "manufacturer": "bawer",
+    "popularity": 0,
+    "model_sizes": "103-78-98",
+    "model_height": "189"
+  }
+]
