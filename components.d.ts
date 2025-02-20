@@ -9,6 +9,8 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Button: typeof import('primevue/button')['default']
+    Carousel: typeof import('primevue/carousel')['default']
+    CarouselItem: typeof import('./src/components/SwiperlItem/CarouselItem.vue')['default']
     ColorPicker: typeof import('primevue/colorpicker')['default']
     Drawer: typeof import('primevue/drawer')['default']
     FloatLabel: typeof import('primevue/floatlabel')['default']
@@ -17,5 +19,7 @@ declare module 'vue' {
     Logo: typeof import('./src/components/icons/Logo.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SwiperlItem: typeof import('./src/components/SwiperlItem/SwiperlItem.vue')['default']
+    Tag: typeof import('primevue/tag')['default']
   }
 }

@@ -1,10 +1,8 @@
-<script setup lang="ts">
-import HeaderItem from "./components/HeaderItem/HeaderItem.vue"
-import { ref } from "vue"
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <HeaderItem />
+  <SwiperlItem />
 </template>
 
 <style scoped></style>

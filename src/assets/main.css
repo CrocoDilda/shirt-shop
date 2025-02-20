@@ -1,3 +1,4 @@
+@import "../assets//fonts/fonts.css";
 @import "./base.css";
 
 .container {
@@ -5,8 +6,21 @@
   padding: 0 calc((100vw - var(--container)) / 2);
 }
 
-.button {
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 50px;
+  }
 }
+@media (max-width: 700px) {
+  .container {
+    padding: 0 25px;
+  }
+}
+
+body {
+  font-family: "Cofosans";
+}
+
 .p-drawer {
   width: 30vw !important;
 }
