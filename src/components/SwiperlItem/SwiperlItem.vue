@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from "swiper/vue"
 import { Autoplay, Pagination } from "swiper/modules"
-import { data, getImagePath } from "./swiper-item"
+import { data } from "./swiper-item"
+import { computed } from "vue"
 import { useWindow } from "@/stores/window-size"
+import CardItem from "../CardItem/CardItem.vue"
 import "swiper/css"
 import "swiper/css/pagination"
-import { computed } from "vue"
 
 const swiperValue = computed(() => {
-  return useWindow().width > 700 ? 3 : useWindow().width > 500 ? 2 : 1
+  return useWindow().width > 950 ? 3 : useWindow().width > 680 ? 2 : 1
 })
 
 const modules = [Pagination, Autoplay]
@@ -16,7 +17,7 @@ const modules = [Pagination, Autoplay]
 
 <template>
   <section class="sec-swiper">
-    <h2 class="swiper--title container">Популярные модели</h2>
+    <h2 class="title swiper--title container">Популярные модели</h2>
     <swiper
       :slidesPerView="swiperValue"
       :spaceBetween="30"
@@ -32,19 +33,14 @@ const modules = [Pagination, Autoplay]
       class="mySwiper"
     >
       <swiper-slide class="swiper--slide" v-for="item in data" :key="item.id">
-        <a href="#" class="swiper--link">
-          <img
-            class="swiper--image"
-            :src="getImagePath(item.manufacturer, item.images[0])"
-            alt=""
-          />
-          <div class="swiper--inner">
-            <p>{{ item.name }}</p>
-            <p>
-              {{ Number(item.price).toLocaleString().replace(/,/g, " ") }} ₽
-            </p>
-          </div>
-        </a>
+        <CardItem
+          :name="item.name"
+          :images="item.images"
+          :price="item.price"
+          :manufacturer="item.manufacturer"
+          class="swiper--card"
+          :interactive="false"
+        />
       </swiper-slide>
     </swiper>
   </section>

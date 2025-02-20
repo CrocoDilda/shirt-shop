@@ -6,7 +6,7 @@
   padding: 0 calc((100vw - var(--container)) / 2);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .container {
     padding: 0 50px;
   }
@@ -23,4 +23,9 @@ body {
 
 .p-drawer {
   width: 30vw !important;
+}
+
+.title {
+  font-size: 48px;
+  color: var(--text-color);
 }

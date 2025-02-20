@@ -8,11 +8,16 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AssortimentItem: typeof import('./src/components/AssortimentItem/AssortimentItem.vue')['default']
+    AssortmentIteml: typeof import('./src/components/AssortimentItem/AssortmentIteml.vue')['default']
     Button: typeof import('primevue/button')['default']
+    CardItem: typeof import('./src/components/CardItem/CardItem.vue')['default']
+    CardItemInteractive: typeof import('./src/components/CardItem/CardItemInteractive.vue')['default']
     Carousel: typeof import('primevue/carousel')['default']
     CarouselItem: typeof import('./src/components/SwiperlItem/CarouselItem.vue')['default']
     ColorPicker: typeof import('primevue/colorpicker')['default']
     Drawer: typeof import('primevue/drawer')['default']
+    FiltersItem: typeof import('./src/components/AssortimentItem/FiltersItem/FiltersItem.vue')['default']
     FloatLabel: typeof import('primevue/floatlabel')['default']
     HeaderItem: typeof import('./src/components/HeaderItem/HeaderItem.vue')['default']
     InputText: typeof import('primevue/inputtext')['default']
