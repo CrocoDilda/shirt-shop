@@ -11,24 +11,22 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-  <a href="#" class="swiper--link static">
+  <a href="#" class="card--link static">
     <img
       :src="getImagePath(manufacturer, images[0])"
       alt="Product Image"
-      class="swiper--image"
+      class="card--image"
     />
 
-    <div class="swiper--inner">
+    <div class="card--inner">
       <p>{{ name }}</p>
       <p>{{ price.toLocaleString().replace(/,/g, " ") }} ₽</p>
-      <div class="swiper--logo-inner">
-        <div class="swiper--image-inner">
-          <img
-            class="swiper--logo"
-            :src="getImagePath(manufacturer, `${manufacturer}_logo.png`)"
-            alt=""
-          />
-        </div>
+      <div class="card--logo-inner">
+        <img
+          class="card--logo"
+          :src="getImagePath(manufacturer, `${manufacturer}_logo.png`)"
+          alt=""
+        />
       </div>
     </div>
   </a>
