@@ -22,6 +22,7 @@ declare module 'vue' {
     HeaderItem: typeof import('./src/components/HeaderItem/HeaderItem.vue')['default']
     InputText: typeof import('primevue/inputtext')['default']
     Logo: typeof import('./src/components/icons/Logo.vue')['default']
+    MultiSelect: typeof import('primevue/multiselect')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SwiperlItem: typeof import('./src/components/SwiperlItem/SwiperlItem.vue')['default']

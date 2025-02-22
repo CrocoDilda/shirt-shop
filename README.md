@@ -30,11 +30,9 @@ Shirt-shop — это учебный проект интернет-магази�
 - **Axios** - для работы с api
 - **ViteImagemin + imagemin-webp** - сжатие изображений при сборке
 
-### Backend:
+## Backend
 
-- **Node.js (Express/Fastify)** – серверная часть
-- **Prisma** – ORM для работы с базой данных
-- **PostgreSQL** – база данных
+Ознакомиться с backend частью проекта можно по ссылке [https://github.com/CrocoDilda/shirt-shop-backend](https://github.com/CrocoDilda/shirt-shop-backend)
 
 ### Тестирование:
 
@@ -45,8 +43,11 @@ Shirt-shop — это учебный проект интернет-магази�
 ## Установка и запуск
 
 ```bash
-npm install
-npm run dev
+	git clone https://github.com/CrocoDilda/shirt-shop.git
+	cd shirt-shop
+
+	npm install
+	npm run dev
 ```
 
 ## Автор

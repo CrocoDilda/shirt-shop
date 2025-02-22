@@ -1,4 +1,6 @@
 .assortiment {
+  display: grid;
+  gap: 50px;
   --padding: 50px;
   padding-top: var(--padding);
   padding-bottom: var(--padding);
