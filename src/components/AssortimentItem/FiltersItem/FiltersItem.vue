@@ -1,16 +1,37 @@
-<script setup>
-import { ref } from "vue"
+<script setup lang="ts">
+import { ref, onMounted, watch } from "vue"
 import Select from "primevue/select"
-import { optionsSearch, options } from "./filters-item"
+import { options, params, data, getAllParams } from "./filters-item"
 
-const selectedCities = ref()
+const filters = ref({
+  color: [],
+  manufacturer: [],
+  material: [],
+  gender: [],
+  price: [],
+})
+
+function clearFilters() {
+  filters.value = {
+    color: [],
+    manufacturer: [],
+    material: [],
+    gender: [],
+    price: [],
+  }
+}
+
+onMounted(() => {
+  getAllParams()
+})
 </script>
 
 <template>
-  <div class="filter">
+  <div v-if="params" class="filter">
+    <!-- <p>{{ filters }}</p> -->
     <MultiSelect
-      v-model="selectedCities"
-      :options="optionsSearch.color"
+      v-model="filters.color"
+      :options="params.colors"
       optionLabel="name"
       filter
       placeholder="Цвет"
@@ -18,8 +39,8 @@ const selectedCities = ref()
       class="w-full md:w-80"
     />
     <MultiSelect
-      v-model="selectedCities"
-      :options="optionsSearch.manufacturer"
+      v-model="filters.manufacturer"
+      :options="params.manufacturers"
       optionLabel="name"
       filter
       placeholder="Производитель"
@@ -27,8 +48,8 @@ const selectedCities = ref()
       class="w-full md:w-80"
     />
     <MultiSelect
-      v-model="selectedCities"
-      :options="optionsSearch.material"
+      v-model="filters.material"
+      :options="params.materials"
       optionLabel="name"
       filter
       placeholder="Материал"
@@ -36,19 +57,21 @@ const selectedCities = ref()
       class="w-full md:w-80"
     />
     <Select
-      v-model="selectedCity"
+      v-model="filters.gender"
       :options="options.gender"
       optionLabel="name"
       placeholder="Пол"
       class="w-full md:w-56"
     />
     <Select
-      v-model="selectedCity"
+      v-model="filters.price"
       :options="options.price"
       optionLabel="name"
       placeholder="Цена"
       class="w-full md:w-56"
     />
+    <Button class="button" label="Фильтровать" />
+    <Button class="clear" label="Сбросить" @click="clearFilters" />
   </div>
 </template>
 

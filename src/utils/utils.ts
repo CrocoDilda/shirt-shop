@@ -5,4 +5,6 @@ function getImagePath(manufacturer: string, imageName: string): string {
   ).href
 }
 
-export { getImagePath }
+const SERVER_URL = "http://localhost:3000"
+
+export { getImagePath, SERVER_URL }
