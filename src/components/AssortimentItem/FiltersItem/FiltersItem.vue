@@ -1,34 +1,20 @@
 <script setup lang="ts">
-import { ref, onMounted, watch } from "vue"
+import { onMounted } from "vue"
 import Select from "primevue/select"
-import { options, params, data, getAllParams } from "./filters-item"
+import {
+  options,
+  params,
+  getAllParams,
+  filters,
+  clearFilters,
+  filterData,
+} from "./filters-item"
 
-const filters = ref({
-  color: [],
-  manufacturer: [],
-  material: [],
-  gender: [],
-  price: [],
-})
-
-function clearFilters() {
-  filters.value = {
-    color: [],
-    manufacturer: [],
-    material: [],
-    gender: [],
-    price: [],
-  }
-}
-
-onMounted(() => {
-  getAllParams()
-})
+onMounted(() => getAllParams())
 </script>
 
 <template>
   <div v-if="params" class="filter">
-    <!-- <p>{{ filters }}</p> -->
     <MultiSelect
       v-model="filters.color"
       :options="params.colors"
@@ -70,7 +56,7 @@ onMounted(() => {
       placeholder="Цена"
       class="w-full md:w-56"
     />
-    <Button class="button" label="Фильтровать" />
+    <Button class="button" label="Фильтровать" @click="filterData" />
     <Button class="clear" label="Сбросить" @click="clearFilters" />
   </div>
 </template>

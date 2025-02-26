@@ -24,6 +24,6 @@ app.use(PrimeVue, {
   },
 })
 
-app.mount("#app")
 app.use(i18n)
 app.use(PrimeVue)
+app.mount("#app")

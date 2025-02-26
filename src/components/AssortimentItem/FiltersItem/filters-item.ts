@@ -1,5 +1,6 @@
 import { ref } from "vue"
 import { SERVER_URL } from "@/utils/utils"
+import { useCollection } from "@/stores/collection"
 type OptionItem = { name: string; code: string }
 
 const optionsSearch = ref({
@@ -50,22 +51,46 @@ const options = ref({
     { name: "Женский", code: "female" },
   ],
   price: [
-    { name: "От дешёвых к дорогим", code: "free" },
-    { name: "От дорогих к дешёвым", code: "expensive" },
+    { name: "От дешёвых к дорогим", code: "asc" },
+    { name: "От дорогих к дешёвым", code: "desc" },
   ],
 })
 
+const filters = ref<{
+  color: OptionItem[]
+  manufacturer: OptionItem[]
+  material: OptionItem[]
+  gender: OptionItem
+  price: OptionItem
+}>({
+  color: [],
+  manufacturer: [],
+  material: [],
+  gender: { name: "", code: "" },
+  price: { name: "", code: "" },
+})
 const data = ref()
 const params = ref()
 
+async function clearFilters() {
+  filters.value = {
+    color: [],
+    manufacturer: [],
+    material: [],
+    gender: { name: "", code: "" },
+    price: { name: "", code: "" },
+  }
+  try {
+    const response = await fetch(`${SERVER_URL}/shirts/all`)
+    useCollection().collection = await response.json()
+  } catch (error) {
+    console.error(error)
+  }
+}
+
 async function getAllParams() {
   try {
-    const response = await fetch(`${SERVER_URL}/shirts/filter-data`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+    const response = await fetch(`${SERVER_URL}/shirts/filter-options`)
     data.value = await response.json()
     params.value = mapAllCategories(
       data.value.colors,
@@ -107,4 +132,52 @@ function mapAllCategories(
   }
 }
 
-export { options, params, data, getAllParams }
+async function filterData() {
+  try {
+    useCollection().collection = []
+    const color = filters.value.color.length
+      ? `colors=${extractFilters(filters.value.color)}&`
+      : ""
+    const manufacturer = filters.value.manufacturer.length
+      ? `manufacturer=${extractFilters(filters.value.manufacturer)}&`
+      : ""
+    const material = filters.value.material.length
+      ? `materials=${extractFilters(filters.value.material)}&`
+      : ""
+    const gender = filters.value.gender.code
+      ? `gender=${filters.value.gender.code}&`
+      : ""
+    const price =
+      "sortOrder=" +
+      (filters.value.price.code ? `${filters.value.price.code}` : "random")
+
+    const response = await fetch(
+      `${SERVER_URL}/shirts/filter?${color}${manufacturer}${material}${gender}${price}`
+    )
+    console.log(
+      `${SERVER_URL}/shirts/filter?${color}${manufacturer}${material}${gender}${price}`
+    )
+    useCollection().collection = await response.json()
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+function extractFilters(arr: Record<string, string>[]): string {
+  if (arr.length == 0) return ""
+  let result = ""
+  arr.forEach((element) => {
+    result += `${element.code},`
+  })
+  return result.slice(0, -1)
+}
+
+export {
+  options,
+  params,
+  data,
+  getAllParams,
+  filters,
+  clearFilters,
+  filterData,
+}
