@@ -1,6 +1,8 @@
 import { ref } from "vue"
 import { SERVER_URL } from "@/utils/utils"
 import { useCollection } from "@/stores/collection"
+import { showToast } from "@/utils/toast"
+
 type OptionItem = { name: string; code: string }
 
 const optionsSearch = ref({
@@ -72,22 +74,6 @@ const filters = ref<{
 const data = ref()
 const params = ref()
 
-async function clearFilters() {
-  filters.value = {
-    color: [],
-    manufacturer: [],
-    material: [],
-    gender: { name: "", code: "" },
-    price: { name: "", code: "" },
-  }
-  try {
-    const response = await fetch(`${SERVER_URL}/shirts/all`)
-    useCollection().collection = await response.json()
-  } catch (error) {
-    console.error(error)
-  }
-}
-
 async function getAllParams() {
   try {
     const response = await fetch(`${SERVER_URL}/shirts/filter-options`)
@@ -132,34 +118,59 @@ function mapAllCategories(
   }
 }
 
-async function filterData() {
-  try {
-    useCollection().collection = []
-    const color = filters.value.color.length
-      ? `colors=${extractFilters(filters.value.color)}&`
-      : ""
-    const manufacturer = filters.value.manufacturer.length
-      ? `manufacturer=${extractFilters(filters.value.manufacturer)}&`
-      : ""
-    const material = filters.value.material.length
-      ? `materials=${extractFilters(filters.value.material)}&`
-      : ""
-    const gender = filters.value.gender.code
-      ? `gender=${filters.value.gender.code}&`
-      : ""
-    const price =
-      "sortOrder=" +
-      (filters.value.price.code ? `${filters.value.price.code}` : "random")
+async function clearFilters() {
+  if (checkFilters()) {
+    filters.value = {
+      color: [],
+      manufacturer: [],
+      material: [],
+      gender: { name: "", code: "" },
+      price: { name: "", code: "" },
+    }
+    try {
+      const response = await fetch(`${SERVER_URL}/shirts/all`)
+      useCollection().collection = await response.json()
+    } catch (error) {
+      console.error(error)
+    }
+  } else {
+    console.log("Filters are not applied")
+    showToast("warn", "Внимание", "Фильтры не применены")
+  }
+}
 
-    const response = await fetch(
-      `${SERVER_URL}/shirts/filter?${color}${manufacturer}${material}${gender}${price}`
-    )
-    console.log(
-      `${SERVER_URL}/shirts/filter?${color}${manufacturer}${material}${gender}${price}`
-    )
-    useCollection().collection = await response.json()
-  } catch (error) {
-    console.error(error)
+async function filterData() {
+  if (checkFilters()) {
+    try {
+      useCollection().collection = []
+      const color = filters.value.color.length
+        ? `colors=${extractFilters(filters.value.color)}&`
+        : ""
+      const manufacturer = filters.value.manufacturer.length
+        ? `manufacturer=${extractFilters(filters.value.manufacturer)}&`
+        : ""
+      const material = filters.value.material.length
+        ? `materials=${extractFilters(filters.value.material)}&`
+        : ""
+      const gender = filters.value.gender.code
+        ? `gender=${filters.value.gender.code}&`
+        : ""
+      const price =
+        "sortOrder=" +
+        (filters.value.price.code ? `${filters.value.price.code}` : "random")
+
+      const response = await fetch(
+        `${SERVER_URL}/shirts/filter?${color}${manufacturer}${material}${gender}${price}`
+      )
+      console.log(
+        `${SERVER_URL}/shirts/filter?${color}${manufacturer}${material}${gender}${price}`
+      )
+      useCollection().collection = await response.json()
+    } catch (error) {
+      console.error(error)
+    }
+  } else {
+    showToast("warn", "Внимание", "Фильтры не применены")
   }
 }
 
@@ -170,6 +181,17 @@ function extractFilters(arr: Record<string, string>[]): string {
     result += `${element.code},`
   })
   return result.slice(0, -1)
+}
+
+function checkFilters() {
+  console.log("net")
+  return (
+    filters.value.color.length ||
+    filters.value.manufacturer.length ||
+    filters.value.material.length ||
+    filters.value.gender.code ||
+    filters.value.price.code
+  )
 }
 
 export {

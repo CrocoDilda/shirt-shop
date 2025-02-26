@@ -5,6 +5,7 @@ import { createPinia } from "pinia"
 import { createI18n } from "vue-i18n"
 import PrimeVue from "primevue/config"
 import Aura from "@primevue/themes/aura"
+import ToastService from "primevue/toastservice"
 
 import App from "./App.vue"
 import router from "./router"
@@ -12,6 +13,7 @@ import router from "./router"
 const app = createApp(App)
 const i18n = createI18n({})
 
+app.use(ToastService)
 app.use(createPinia())
 app.use(router)
 app.use(PrimeVue, {

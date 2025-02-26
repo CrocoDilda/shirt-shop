@@ -25,7 +25,9 @@ declare module 'vue' {
     MultiSelect: typeof import('primevue/multiselect')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Skeleton: typeof import('primevue/skeleton')['default']
     SwiperlItem: typeof import('./src/components/SwiperlItem/SwiperlItem.vue')['default']
     Tag: typeof import('primevue/tag')['default']
+    Toast: typeof import('primevue/toast')['default']
   }
 }
