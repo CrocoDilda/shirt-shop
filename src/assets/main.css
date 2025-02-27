@@ -19,6 +19,7 @@
 
 body {
   font-family: "Cofosans";
+  overflow-x: hidden;
 }
 
 .p-drawer {

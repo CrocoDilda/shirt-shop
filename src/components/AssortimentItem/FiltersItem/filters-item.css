@@ -1,3 +1,8 @@
+:root {
+  --p-card-title-font-weight: var(--p-card-title-font-weight);
+  --p-card-title-font-weight: var(--p-card-title-font-weight);
+}
+
 .filter {
   display: grid;
   grid-auto-flow: column;
@@ -19,4 +24,15 @@
   background-color: var(--p-select-background);
   border: 1px solid var(--p-button-contrast-border-color);
   color: var(--p-button-contrast-border-color);
+}
+
+.search {
+  position: relative; /* Для позиционирования результатов относительно строки */
+}
+
+.dropdown {
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  z-index: 10;
 }

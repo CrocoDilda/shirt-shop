@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { onMounted } from "vue"
-import Select from "primevue/select"
+import IconField from "primevue/iconfield"
+import InputIcon from "primevue/inputicon"
+import InputText from "primevue/inputtext"
+import DropDown from "./DropDown/DropDown.vue"
+
 import {
   options,
   params,
@@ -8,13 +12,43 @@ import {
   filters,
   clearFilters,
   filterData,
+  searchResults,
+  debounce,
+  nothingFound,
+  loading,
 } from "./filters-item"
+
+// Скрытие результатов при снятии фокуса
+const hideResults = () => {
+  searchResults.value = []
+  filters.value.searchQuery = ""
+}
 
 onMounted(() => getAllParams())
 </script>
 
 <template>
   <div v-if="params" class="filter">
+    <div class="search">
+      <!-- Строка поиска -->
+      <IconField>
+        <InputIcon class="pi pi-search" />
+        <InputText
+          v-model="filters.searchQuery"
+          placeholder="Поиск по названию"
+          @input="debounce"
+          @blur="hideResults"
+        />
+      </IconField>
+      <DropDown
+        v-if="filters.searchQuery.length > 0"
+        :arr="searchResults"
+        :loading="loading"
+        :nothing-found="nothingFound"
+        class="dropdown"
+      />
+    </div>
+
     <MultiSelect
       v-model="filters.color"
       :options="params.colors"

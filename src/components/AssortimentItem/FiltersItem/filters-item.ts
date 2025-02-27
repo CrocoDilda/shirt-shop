@@ -2,6 +2,8 @@ import { ref } from "vue"
 import { SERVER_URL } from "@/utils/utils"
 import { useCollection } from "@/stores/collection"
 import { showToast } from "@/utils/toast"
+import { useDebounceFn } from "@vueuse/core"
+import type { Shirt } from "@/types"
 
 type OptionItem = { name: string; code: string }
 
@@ -59,12 +61,14 @@ const options = ref({
 })
 
 const filters = ref<{
+  searchQuery: string
   color: OptionItem[]
   manufacturer: OptionItem[]
   material: OptionItem[]
   gender: OptionItem
   price: OptionItem
 }>({
+  searchQuery: "",
   color: [],
   manufacturer: [],
   material: [],
@@ -73,6 +77,23 @@ const filters = ref<{
 })
 const data = ref()
 const params = ref()
+const searchResults = ref<any[]>([]) // Результаты поиска
+const nothingFound = ref(false)
+const loading = ref(false)
+const multiSelectArr = [
+  {
+    select: "color",
+    name: "Цвет",
+  },
+  {
+    select: "manufacturers",
+    name: "Производитель",
+  },
+  {
+    select: "materials",
+    name: "Материал",
+  },
+]
 
 async function getAllParams() {
   try {
@@ -121,6 +142,7 @@ function mapAllCategories(
 async function clearFilters() {
   if (checkFilters()) {
     filters.value = {
+      searchQuery: "",
       color: [],
       manufacturer: [],
       material: [],
@@ -134,7 +156,6 @@ async function clearFilters() {
       console.error(error)
     }
   } else {
-    console.log("Filters are not applied")
     showToast("warn", "Внимание", "Фильтры не применены")
   }
 }
@@ -162,9 +183,6 @@ async function filterData() {
       const response = await fetch(
         `${SERVER_URL}/shirts/filter?${color}${manufacturer}${material}${gender}${price}`
       )
-      console.log(
-        `${SERVER_URL}/shirts/filter?${color}${manufacturer}${material}${gender}${price}`
-      )
       useCollection().collection = await response.json()
     } catch (error) {
       console.error(error)
@@ -184,8 +202,8 @@ function extractFilters(arr: Record<string, string>[]): string {
 }
 
 function checkFilters() {
-  console.log("net")
   return (
+    filters.value.searchQuery.length ||
     filters.value.color.length ||
     filters.value.manufacturer.length ||
     filters.value.material.length ||
@@ -193,6 +211,32 @@ function checkFilters() {
     filters.value.price.code
   )
 }
+
+// Функция для выполнения поиска
+const handleSearch = async () => {
+  loading.value = true
+  if (!filters.value.searchQuery) {
+    searchResults.value = []
+    return
+  }
+
+  try {
+    const response = await fetch(
+      `http://localhost:3000/shirts/name/${filters.value.searchQuery}`
+    )
+    searchResults.value = await response.json()
+    searchResults.value.length === 0
+      ? (nothingFound.value = true)
+      : (nothingFound.value = false)
+  } catch (error) {
+    console.error("Ошибка при поиске:", error)
+    searchResults.value = []
+  }
+  loading.value = false
+}
+
+// Debounce для уменьшения запросов
+const debounce = useDebounceFn(handleSearch, 250)
 
 export {
   options,
@@ -202,4 +246,9 @@ export {
   filters,
   clearFilters,
   filterData,
+  multiSelectArr,
+  searchResults,
+  debounce,
+  nothingFound,
+  loading,
 }
