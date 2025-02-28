@@ -18,21 +18,26 @@ function toggleDarkMode() {
 <template>
   <header class="header container">
     <nav class="header--nav">
-      <Button
-        @click="toggleDarkMode()"
-        :icon="`pi pi-${theme ? 'moon' : 'sun'}`"
-        variant="text"
-        rounded
-        aria-label="Filter"
-        severity="contrast"
-      />
+      <div class="header--left">
+        <Button
+          @click="toggleDarkMode()"
+          :icon="`pi pi-${theme ? 'moon' : 'sun'}`"
+          variant="text"
+          rounded
+          aria-label="Filter"
+          severity="contrast"
+        />
+        <Button
+          variant="text"
+          label="ru"
+          rounded
+          aria-label="Filter"
+          severity="contrast"
+          class="header--lang"
+        />
+      </div>
 
-      <IconField class="header--search">
-        <InputIcon class="pi pi-search" />
-        <InputText v-model="value1" placeholder="Введите название" />
-      </IconField>
-
-      <div class="header--inner">
+      <div class="header--right">
         <Button
           icon="pi pi-shopping-cart"
           @click="visibleRight = true"
@@ -73,7 +78,7 @@ function toggleDarkMode() {
 
 .header--nav {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr 1fr;
   gap: 25px;
 }
 
@@ -81,8 +86,14 @@ function toggleDarkMode() {
   justify-self: center;
 }
 
-.header--inner {
+.header--left {
   display: flex;
-  gap: 10px;
+  gap: 20px;
+}
+
+.header--right {
+  display: flex;
+  gap: 20px;
+  justify-self: end;
 }
 </style>

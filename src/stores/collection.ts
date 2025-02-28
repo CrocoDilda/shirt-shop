@@ -1,5 +1,5 @@
-import { ref } from "vue"
 import { defineStore } from "pinia"
+import { ref } from "vue"
 import { SERVER_URL } from "@/utils/utils"
 import type { Shirt } from "@/types"
 

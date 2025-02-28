@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue"
-import FiltersItem from "@/components/AssortimentItem/FiltersItem/FiltersItem.vue"
+import FiltersItem from "@/components/MainPage/AssortimentItem/FiltersItem/FiltersItem.vue"
 import CardItem from "../CardItem/CardItemInteractive.vue"
 import { useCollection } from "@/stores/collection"
 import Skeleton from "primevue/skeleton"
