@@ -38,8 +38,9 @@ const modules = [Pagination, Autoplay]
           :images="item.images"
           :price="item.price"
           :manufacturer="item.manufacturer"
-          class="swiper--card"
           :interactive="false"
+          :id="item.id"
+          class="swiper--card"
         />
       </swiper-slide>
     </swiper>

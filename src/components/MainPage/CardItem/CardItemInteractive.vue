@@ -8,6 +8,7 @@ type Props = {
   images: string[]
   price: number
   manufacturer: string
+  id: number
 }
 
 const props = defineProps<Props>()
@@ -25,8 +26,8 @@ const debouncedMouseMove = useDebounceFn(handleMouseMove, 50)
 </script>
 
 <template>
-  <a
-    href="#"
+  <router-link
+    :to="`/shirt/${id}`"
     class="card--link"
     ref="cardRef"
     @mousemove="debouncedMouseMove"
@@ -64,7 +65,7 @@ const debouncedMouseMove = useDebounceFn(handleMouseMove, 50)
         />
       </div>
     </div>
-  </a>
+  </router-link>
 </template>
 
 <style scoped>

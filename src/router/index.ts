@@ -10,9 +10,9 @@ const router = createRouter({
       component: MainView,
     },
     {
-      path: "/shirt",
-      name: "shirt",
-      component: () => import("@/views/ShirtView.vue"),
+      path: "/shirt/:id",
+      name: "ShirtView",
+      component: () => import("@/views/ShirtView/ShirtView.vue"),
     },
   ],
 })

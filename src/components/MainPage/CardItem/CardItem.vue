@@ -6,12 +6,13 @@ type Props = {
   images: string[]
   price: number
   manufacturer: string
+  id: number
 }
 const props = defineProps<Props>()
 </script>
 
 <template>
-  <a href="#" class="card--link static">
+  <router-link :to="`/shirt/${id}`" class="card--link static">
     <img
       :src="getImagePath(manufacturer, images[0])"
       alt="Product Image"
@@ -29,7 +30,7 @@ const props = defineProps<Props>()
         />
       </div>
     </div>
-  </a>
+  </router-link>
 </template>
 <style scoped>
 @import url("./card-item.css");

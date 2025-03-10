@@ -25,6 +25,7 @@ onMounted(async () => {
         :images="item.images"
         :price="item.price"
         :manufacturer="item.manufacturer"
+        :id="item.id"
       />
     </ul>
     <ul
